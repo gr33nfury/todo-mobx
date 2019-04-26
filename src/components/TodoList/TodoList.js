@@ -1,16 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
+import List from '@material-ui/core/List';
 
 import Todo from '../Todo/Todo';
 
 function TodoList({ todos }) {
   return (
-    <ul>
+    <List>
       {todos.map(todo => (
         <Todo key={todo.id} todo={todo} onClick={todo.toggle} />
       ))}
-    </ul>
+    </List>
   );
 }
 

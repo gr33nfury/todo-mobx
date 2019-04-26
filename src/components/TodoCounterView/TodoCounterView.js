@@ -1,11 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
+import Typography from '@material-ui/core/Typography';
 
 function TodoCounterView({ store }) {
   return (
     <div>
-      {store.pendingCount} pending, {store.completedCount} completed
+      <Typography>
+        {store.pendingCount} pending, {store.completedCount} completed
+      </Typography>
     </div>
   );
 }

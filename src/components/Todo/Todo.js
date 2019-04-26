@@ -1,15 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { observer } from 'mobx-react';
+import Checkbox from '@material-ui/core/Checkbox';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 
 function Todo({ todo, onClick }) {
   return (
-    <li
+    <ListItem
       onClick={onClick}
+      role={undefined}
+      dense
+      button
       style={{ textDecoration: todo.completed ? 'line-through' : 'none' }}
     >
-      {todo.text}
-    </li>
+      <Checkbox checked={todo.completed} tabIndex={-1} disableRipple />
+      <ListItemText primary={todo.text} />
+    </ListItem>
   );
 }
 
